@@ -14,31 +14,22 @@ async function initiateApp() {
         var state = states[i]
         console.log(state)
 
-        var li = document.createElement('li')
-        li.innerHTML = state.name +': '+state.gasoline
+        var button = document.createElement('button')
+        button.setAttribute("id",state.name)
+        button.addEventListener("click", handleClick);
+        button.innerHTML = state.name +': '+state.gasoline
+
         var statesList = document.getElementById('states-list')
-        statesList.appendChild(li)
+        statesList.appendChild(button)
     }
-    // states.result.forEach(function (state) {
-    //     console.log(state)
-    // })
-
-    //YOU SHOULD CHANGE THIS TO YOUR API KEY
-    const owensApiKey = `fcb34b40-62a9-11ec-88d0-1becdba60906`;
-
-    let apiResponse = await fetch(
-        `https://app.zipcodebase.com/api/v1/search?apikey=${owensApiKey}&codes=76107&country=US`
-    );
-    apiResponse = await apiResponse.json();
-    console.log("response", apiResponse);
-
-    let zipCodeResults = apiResponse.results["76107"];
-    zipCodeResults = zipCodeResults[0];
-    const stateCode = zipCodeResults.state_code;
-    //NOW WE HAVE THE STATE ASSOCIATED WITH THE ZIP CODE THAT WE PUT IN THE FETCH REQUEST
-    console.log("state", stateCode);
+    
+   
 
 
 }
-
+function handleClick(event){
+    var id = event.target.id
+    localStorage.setItem('state',id)
+    window.location.href = '/zipcode.html'
+}
 
