@@ -1,8 +1,5 @@
-console.log("here")
-// apikey 6krynd87rz1TsWqDpZYUUb:0ciGngEoJSMBP83AfhLUEE
-// Q9MDb5WDiRm3Fp30Qkrbq94Zhpmk88Bb9mCg1SkddX8UGaNIgQ0kpqZ59g7QpmEy
-
-async function handle() {
+window.addEventListener("load", initiateApp());
+async function initiateApp() {
     console.log("clicked")
     let states = await fetch("https://api.collectapi.com/gasPrice/allUsaPrice", {
         headers: {
@@ -27,19 +24,21 @@ async function handle() {
     // })
 
     //YOU SHOULD CHANGE THIS TO YOUR API KEY
-    // const owensApiKey = `fcb34b40-62a9-11ec-88d0-1becdba60906`;
+    const owensApiKey = `fcb34b40-62a9-11ec-88d0-1becdba60906`;
 
-    // let apiResponse = await fetch(
-    //     `https://app.zipcodebase.com/api/v1/search?apikey=${owensApiKey}&codes=01073&country=US`
-    // );
-    // apiResponse = await apiResponse.json();
-    // console.log("response", apiResponse);
+    let apiResponse = await fetch(
+        `https://app.zipcodebase.com/api/v1/search?apikey=${owensApiKey}&codes=76107&country=US`
+    );
+    apiResponse = await apiResponse.json();
+    console.log("response", apiResponse);
 
-    // let zipCodeResults = apiResponse.results["01073"];
-    // zipCodeResults = zipCodeResults[0];
-    // const state = zipCodeResults.state_code;
-    // //NOW WE HAVE THE STATE ASSOCIATED WITH THE ZIP CODE THAT WE PUT IN THE FETCH REQUEST
-    // console.log("state", state);
+    let zipCodeResults = apiResponse.results["76107"];
+    zipCodeResults = zipCodeResults[0];
+    const stateCode = zipCodeResults.state_code;
+    //NOW WE HAVE THE STATE ASSOCIATED WITH THE ZIP CODE THAT WE PUT IN THE FETCH REQUEST
+    console.log("state", stateCode);
 
 
 }
+
+
