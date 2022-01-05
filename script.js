@@ -13,23 +13,23 @@ async function initiateApp() {
     for (var i = 0; i < states.length; i++) {
         var state = states[i]
         console.log(state)
-
+        var li = document.createElement('li')
         var button = document.createElement('button')
-        button.setAttribute("id",state.name)
+        button.setAttribute("id", state.name)
         button.addEventListener("click", handleClick);
-        button.innerHTML = state.name +': '+state.gasoline
-
+        button.innerHTML = state.name + ': ' + state.gasoline
+        li.appendChild(button)
         var statesList = document.getElementById('states-list')
-        statesList.appendChild(button)
+        statesList.appendChild(li)
     }
-    
-   
+
+
 
 
 }
-function handleClick(event){
+function handleClick(event) {
     var id = event.target.id
-    localStorage.setItem('state',id)
+    localStorage.setItem('state', id)
     window.location.href = '/zipcode.html'
 }
 
