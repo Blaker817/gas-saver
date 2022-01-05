@@ -19,6 +19,9 @@ async function getGasPrices(zipcode) {
     const stateCode = zipCodeResults.state_code;
     //NOW WE HAVE THE STATE ASSOCIATED WITH THE ZIP CODE THAT WE PUT IN THE FETCH REQUEST
     console.log(stateCode);
+    getCities(stateCode)
+}
+async function getCities(stateCode){
     let state = await fetch(`https://api.collectapi.com/gasPrice/stateUsaPrice?state=${stateCode}`, {
         headers: {
             "content-type": "application/json",
@@ -28,14 +31,20 @@ async function getGasPrices(zipcode) {
     state = await state.json();
    
     var cities = state.result.cities
-   
+    var citiesList = document.getElementById('cities-list')
+    citiesList.innerHTML = ""
     for (var i = 0; i < cities.length; i++) {
         var city = cities[i]
         console.log(city)
 
         var li = document.createElement('li')
         li.innerHTML = city.name +': '+city.gasoline
-        var citiesList = document.getElementById('cities-list')
+        
         citiesList.appendChild(li)
     }
+    localStorage.setItem('state', "")
+}
+var stateAbbr = (localStorage.getItem('state'))
+if (stateAbbr){
+    getCities(stateAbbr)
 }
