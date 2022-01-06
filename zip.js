@@ -7,10 +7,10 @@ searchBtn.addEventListener('click', function () {
 }
 )
 async function getGasPrices(zipcode) {
-    const ApiKey = `fcb34b40-62a9-11ec-88d0-1becdba60906`;
+    const apiKey = `1a3a5b30-6f0f-11ec-935b-a5c634149c27`;
 
     let apiResponse = await fetch(
-        `https://app.zipcodebase.com/api/v1/search?apikey=${apiKey}&codes=01073&country=US`
+        `https://app.zipcodebase.com/api/v1/search?apikey=${apiKey}&codes=${zipcode}&country=US`
     );
     apiResponse = await apiResponse.json();
 
@@ -25,7 +25,7 @@ async function getCities(stateCode) {
     let state = await fetch(`https://api.collectapi.com/gasPrice/stateUsaPrice?state=${stateCode}`, {
         headers: {
             "content-type": "application/json",
-            "authorization": "apikey 6krynd87rz1TsWqDpZYUUb:0ciGngEoJSMBP83AfhLUEE"
+            "authorization": "apikey 6SxV5TTH69G21oYpYQMAMv:2OKYaZlzBBZJFXTocM9CuT"
         }
     });
     state = await state.json();
@@ -44,7 +44,7 @@ async function getCities(stateCode) {
     }
     localStorage.setItem('state', "")
 }
-var stateAbbr = (localStorage.getItem('state'))
+var stateAbbr = localStorage.getItem('state')
 if (stateAbbr) {
     getCities(stateAbbr)
 }

@@ -4,7 +4,7 @@ async function initiateApp() {
     let states = await fetch("https://api.collectapi.com/gasPrice/allUsaPrice", {
         headers: {
             "content-type": "application/json",
-            "authorization": "apikey 6QLd1juzkDdsqLX3hKcPva:4AZkgb9kwb7dzjOBnG8T3M"
+            "authorization": "apikey 6SxV5TTH69G21oYpYQMAMv:2OKYaZlzBBZJFXTocM9CuT"
         }
     });
     states = await states.json();
@@ -30,7 +30,7 @@ async function initiateApp() {
 function handleClick(event) {
     var state = event.target.id
     var stateCode = map[state]
-  
+  localStorage.setItem("state",stateCode)
 
     window.location.href = '/zipcode.html'
 }
