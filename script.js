@@ -4,7 +4,7 @@ async function initiateApp() {
     let states = await fetch("https://api.collectapi.com/gasPrice/allUsaPrice", {
         headers: {
             "content-type": "application/json",
-            "authorization": "apikey 6krynd87rz1TsWqDpZYUUb:0ciGngEoJSMBP83AfhLUEE"
+            "authorization": "apikey 6QLd1juzkDdsqLX3hKcPva:4AZkgb9kwb7dzjOBnG8T3M"
         }
     });
     states = await states.json();
