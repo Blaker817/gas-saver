@@ -31,7 +31,7 @@ function handleClick(event) {
     var state = event.target.id
     var stateCode = map[state]
   
-    localStorage.setItem('state', stateCode)
+
     window.location.href = '/zipcode.html'
 }
 
