@@ -1,6 +1,22 @@
 :root {
     background-color: darkgray;
 }
-h1 {
+div{
     text-align: center;
+    background-color: cadetblue;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+   
+    background-image: url(/images/usmap.jpg);
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+  background-attachment: fixed;
+
+}
+li{
+    display: table;
+    background-color: white;
 }

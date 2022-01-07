@@ -1,5 +1,6 @@
 window.addEventListener("load", initiateApp());
 async function initiateApp() {
+
     console.log("clicked")
     let states = await fetch("https://api.collectapi.com/gasPrice/allUsaPrice", {
         headers: {
@@ -12,7 +13,7 @@ async function initiateApp() {
     console.log(states)
     for (var i = 0; i < states.length; i++) {
         var state = states[i]
-        console.log(state)
+     
         var li = document.createElement('li')
         var button = document.createElement('button')
         button.setAttribute("id", state.name)

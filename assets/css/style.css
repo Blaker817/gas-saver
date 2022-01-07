@@ -1,11 +1,18 @@
-:root {
-    background-color: darkgray;
-}
+/* :root {
+    background-color: cadetblue;
+} */
 h1{
     color: black;
     text-align: center;
     background-color: orange;
+    margin-block-start: 0;
+    font-size: 50px;
 
+}
+p{
+    text-align: center;
+    font-size: 30px;
+    color: red;
 }
 
 h2{
@@ -17,4 +24,15 @@ h2{
 img.car-image{
   width: 600px; 
   height: auto;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+   
+    background-image: url(/images/fordf.webp);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  background-attachment: fixed;
+
 }
