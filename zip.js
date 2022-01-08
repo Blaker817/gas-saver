@@ -25,7 +25,7 @@ async function getCities(stateCode) {
     let state = await fetch(`https://api.collectapi.com/gasPrice/stateUsaPrice?state=${stateCode}`, {
         headers: {
             "content-type": "application/json",
-            "authorization": "apikey 6SxV5TTH69G21oYpYQMAMv:2OKYaZlzBBZJFXTocM9CuT"
+            "authorization": "apikey 4Ji2BJcN7WoxDE4xKfhq0e:6NWrwjsp2iCMiG4L7gDS6Y"
         }
     });
     state = await state.json();
