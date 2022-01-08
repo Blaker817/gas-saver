@@ -54,7 +54,7 @@ body{
     min-height: 100vh;
     margin: 0;
    
-    background-image: url(/images/fordf.webp);
+    background-image: url(./images/fordf.webp);
     background-repeat: repeat-y;
     background-size: 100% auto;
   background-attachment: fixed;
