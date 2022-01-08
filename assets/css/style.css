@@ -4,10 +4,34 @@
 h1{
     color: black;
     text-align: center;
-    background-color:red;
     margin-block-start: 0;
     font-size: 50px;
+    display: inline-block;
 
+}
+nav{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+button#about{
+    position: absolute;
+    left: 10px;
+}
+div#info{
+    position: relative;
+    height: 0;
+}
+#about-content{
+    background-color: royalblue;
+    display: inline-block;
+    left: 40px;
+    position: absolute;
+    top: -35px;
+    visibility: hidden;
+    padding: 15px;
 }
 p{
     text-align: center;

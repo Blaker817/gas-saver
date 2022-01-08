@@ -1,7 +1,7 @@
 window.addEventListener("load", initiateApp());
 async function initiateApp() {
 
-    console.log("clicked")
+    
     let states = await fetch("https://api.collectapi.com/gasPrice/allUsaPrice", {
         headers: {
             "content-type": "application/json",
@@ -27,6 +27,19 @@ async function initiateApp() {
 
 
 
+}
+var contentHidden = true
+function handleAboutClick(){
+    var button = document.getElementById("about-content")
+    var value 
+    if (contentHidden===true){
+        value = "visible"
+    }
+    else{
+        value = "hidden"
+    }
+    button.style.visibility = value
+  contentHidden = !contentHidden
 }
 function handleClick(event) {
     var state = event.target.id
